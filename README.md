@@ -1,36 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Для тестового задания нужно разработать веб-приложение, которое включает в себя график с фильтрами. Для этого приложения требуется использовать данные из файла usages.csv, в котором есть список юсаджей. Каждый юсадж включает в себя тип (type), дату создания (created_at), модель (model), количество входного юсаджа (usage_input) и количество выходного юсаджа (usage_output).
 
-## Getting Started
+Файл costs.csv содержит стоимость входных и выходных данных для каждой модели. В итоге стоимость каждого юсаджа вычисляется как model cost of input usage _ usage_input + model cost of output usage _ usage_output.
 
-First, run the development server:
+Результатом будет график, отображающий общие затраты за каждый день. В приложении также должны быть предусмотрены фильтры по типу и модели, чтобы можно было, например, просмотреть затраты для операций типа "first" и так далее. Фильтры могут использоваться одновременно, то есть можно установить фильтры как по типу, так и по модели.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Уточнения
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Выбор библиотек не имеет значения, можно выбрать что угодно. Также не имеет значение где будет размещен код, главное чтобы приложение запускалось просто npm i & npm run dev,start или что-то еще. Формат графика также не имеет значения, это будет просто график или колонки или что-то еще. Также нам важно как вы подойдете к дизайну!
