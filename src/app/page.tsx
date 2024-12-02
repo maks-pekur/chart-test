@@ -42,7 +42,6 @@ const Home = () => {
 
   const handleDateChange = (range: DateRange | undefined) => {
     setDateRange(range);
-    console.log("Selected Date Range:", range);
   };
 
   useEffect(() => {
@@ -53,7 +52,15 @@ const Home = () => {
           throw new Error("Failed to fetch data");
         }
         const result: IDataItem[] = await response.json();
-        setData(result);
+        
+        const sortedData = result.sort((a, b) => {
+          const dateA = new Date(a.created_at.split(".").reverse().join("-")); // Преобразование "DD.MM.YYYY" в "YYYY-MM-DD"
+          const dateB = new Date(b.created_at.split(".").reverse().join("-"));
+          return dateA.getTime() - dateB.getTime();
+        });
+        console.log("result", sortedData);
+
+        setData(sortedData);
         setFilteredData(result);
 
         const types = Array.from(new Set(result.map((item) => item.type)));
